@@ -54,7 +54,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'admin18acr'
-        repository: 'coffee-store'
+        repository: 'store'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
     - task: Docker@2
