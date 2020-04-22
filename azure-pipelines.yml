@@ -3,12 +3,6 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- task: Docker@2
-  inputs:
-    containerRegistry: 'admin18acr'
-    repository: 'coffee-store'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
 - master
 
 resources:
