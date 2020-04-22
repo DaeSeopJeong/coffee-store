@@ -57,7 +57,12 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'drop'
         publishLocation: 'Container'
-    
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'admin18acr'
+        repository: 'coffee-store'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
