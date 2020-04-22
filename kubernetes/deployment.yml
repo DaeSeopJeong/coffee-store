@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: store
-          image: dmin18acr.azurecr.io/store:latest
+          image: dmin18acr.azurecr.io/coffee-store:latest
           ports:
             - containerPort: 8080
           readinessProbe:
