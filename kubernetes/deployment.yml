@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: store
+  name: gateway
   labels:
-    app: store
+    app: gateway
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: store
+      app: gateway
   template:
     metadata:
       labels:
-        app: store
+        app: gateway
     spec:
       containers:
-        - name: store
-          image: username/store:latest
+        - name: gateway
+          image: dmin18acr.azurecr.io/gateway:latest
           ports:
             - containerPort: 8080
           readinessProbe:
