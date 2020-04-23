@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PolicyHandler{
-    
+
+    /*
     @StreamListener(KafkaProcessor.INPUT)
     public void wheneverPaymentCanceled_OrderCanceled(@Payload PaymentCanceled paymentCanceled){
 
@@ -26,5 +27,5 @@ public class PolicyHandler{
             System.out.println("##### listener 주문정보받음 : " + paymentApproved.toJson());
         }
     }
-
+    */
 }
