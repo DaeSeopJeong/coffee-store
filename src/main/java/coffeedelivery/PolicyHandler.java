@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 public class PolicyHandler{
 
     @StreamListener(KafkaProcessor.INPUT)
-    @SendTo(Processor.OUTPUT)
     public void wheneverPaymentCanceled_OrderCanceled(@Payload PaymentCanceled paymentCanceled){
 
         if(paymentCanceled.isMe()){
@@ -23,7 +22,6 @@ public class PolicyHandler{
     }
 
     @StreamListener(KafkaProcessor.INPUT)
-    @SendTo(Processor.OUTPUT)
     public void wheneverPaymentApproved_OrderInfoReceived(@Payload PaymentApproved paymentApproved){
 
         if(paymentApproved.isMe()){
