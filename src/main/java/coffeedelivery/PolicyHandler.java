@@ -12,14 +12,15 @@ import org.springframework.stereotype.Service;
 public class PolicyHandler{
     
     @StreamListener(KafkaProcessor.INPUT)
-    public void wheneverPaymentCanceled_주문취소됨(@Payload PaymentCanceled paymentCanceled){
+    public void wheneverPaymentCanceled_OrderCanceled(@Payload PaymentCanceled paymentCanceled){
 
         if(paymentCanceled.isMe()){
             System.out.println("##### listener 주문취소됨 : " + paymentCanceled.toJson());
         }
     }
+
     @StreamListener(KafkaProcessor.INPUT)
-    public void wheneverPaymentApproved_주문정보받음(@Payload PaymentApproved paymentApproved){
+    public void wheneverPaymentApproved_OrderInfoReceived(@Payload PaymentApproved paymentApproved){
 
         if(paymentApproved.isMe()){
             System.out.println("##### listener 주문정보받음 : " + paymentApproved.toJson());
